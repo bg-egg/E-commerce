@@ -63,6 +63,7 @@ with st.sidebar:
         label='Rentang Waktu',min_value=min_date,
         max_value=max_date,
         value=[min_date, max_date]
+    st.caption (Training Project by Ega Siregar)
     )
 #Data container for slider
 main_df = all_df[(all_df["order_purchase_timestamp"] >= str(start_date)) & 
