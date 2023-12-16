@@ -41,12 +41,11 @@ def create_rfm_df(df):
     rfm_df.drop("max_order_timestamp", axis=1, inplace=True)
     
     return rfm_df
-#Deploy Brazil Map
 
 
 ###INSERT MASTER DATA####
 
-all_df = pd.read_csv('all_df.csv')
+all_df = pd.read_csv('dashboard/all_df.csv')
 #Change "order_purchase_timestamp" datatype to DateTime
 all_df["order_purchase_timestamp"]= pd.to_datetime(all_df["order_purchase_timestamp"])
 
@@ -65,6 +64,7 @@ with st.sidebar:
         max_value=max_date,
         value=[min_date, max_date]
     )
+    st.caption ("Training Project by Ega Siregar")
 #Data container for slider
 main_df = all_df[(all_df["order_purchase_timestamp"] >= str(start_date)) & 
                 (all_df["order_purchase_timestamp"] <= str(end_date))]
