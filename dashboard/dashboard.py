@@ -41,12 +41,11 @@ def create_rfm_df(df):
     rfm_df.drop("max_order_timestamp", axis=1, inplace=True)
     
     return rfm_df
-#Deploy Brazil Map
 
 
 ###INSERT MASTER DATA####
 
-all_df = pd.read_csv('all_df.csv')
+all_df = pd.read_csv('https://github.com/bg-egg/E-commerce/blob/main/dashboard/all_df.csv')
 #Change "order_purchase_timestamp" datatype to DateTime
 all_df["order_purchase_timestamp"]= pd.to_datetime(all_df["order_purchase_timestamp"])
 
